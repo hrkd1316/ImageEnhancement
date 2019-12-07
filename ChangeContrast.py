@@ -12,15 +12,9 @@ img = cv2.imread("Mono-Image2/512X512/Aerial2.bmp", 0)
 
 dst_high = change_contrast(img, 20)
 cv2.imwrite("Result/high_contrast_img.png", dst_high)
-plt.hist(dst_high.ravel(), 256, [0, 256])
-plt.savefig('Result/high_contrast_hist')
-plt.clf()
 
 dst_low = change_contrast(img, 1)
 cv2.imwrite("Result/low_contrast_img.png", dst_low)
-plt.hist(dst_low.ravel(), 256, [0, 256])
-plt.savefig('Result/low_contrast_hist')
-plt.clf()
 
 plt.subplot(121)
 plt.imshow(dst_high, cmap="gray")
