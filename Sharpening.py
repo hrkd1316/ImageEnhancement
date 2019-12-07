@@ -7,10 +7,7 @@ k = -1.0
 sharpening_kernel = np.array([[k, k, k],[k, 9*-k, k],[k, k, k]])
 
 dst = cv2.filter2D(img, -1, sharpening_kernel)
-plt.imshow(dst, cmap="gray")
-plt.xticks([]), plt.yticks([])
-plt.savefig('Result/sharpening_img')
-plt.clf()
+cv2.imwrite('Result/sharpening_img.png', dst)
 
 plt.subplot(121)
 plt.imshow(img, cmap="gray")

@@ -9,10 +9,7 @@ plt.savefig('Result/normal_hist', bbox_inches='tight')
 plt.clf()
 
 equ = cv2.equalizeHist(img)
-plt.imshow(equ, cmap="gray")
-plt.xticks([]), plt.yticks([])
-plt.savefig('Result/equ_img', bbox_inches='tight')
-plt.clf()
+cv2.imwrite('Result/equ_img.png', equ)
 
 plt.hist(equ.ravel(), 256, [0, 256])
 plt.savefig('Result/equ_hist', bbox_inches='tight')
